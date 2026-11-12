@@ -1,0 +1,32 @@
+/* LivebBoard legal pages. One shared stylesheet, system fonts only, no external requests. */
+:root{--bg:#f4f6f1;--card:#ffffff;--ink:#17221e;--ink-2:#3e4c45;--ink-3:#5d6b63;--rule:#d5dcd0;--accent:#1f6b4f;--accent-ink:#ffffff;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#1c2824;--card:#243430;--ink:#eef1e9;--ink-2:#c3ccc1;--ink-3:#9aa79f;--rule:#3a4c45;--accent:#97d9ba;--accent-ink:#17221e;color-scheme:dark}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.75 "Segoe UI",Tahoma,"Noto Sans Arabic",system-ui,-apple-system,sans-serif}
+[dir="rtl"] body{line-height:1.95}
+a{color:var(--accent);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:780px;margin:0 auto;padding:0 clamp(16px,4vw,28px)}
+header.top{border-bottom:1px solid var(--rule);background:var(--card)}
+header.top .wrap{display:flex;align-items:center;gap:12px;min-height:64px;flex-wrap:wrap}
+.brand{font-weight:700;font-size:20px;color:var(--ink);text-decoration:none;margin-inline-end:auto}
+header.top nav{display:flex;gap:4px;flex-wrap:wrap}
+header.top nav a,#lang{font:inherit;font-size:15px;color:var(--ink-2);background:none;border:0;padding:8px 12px;border-radius:8px;text-decoration:none;cursor:pointer}
+header.top nav a:hover,#lang:hover{background:var(--bg);color:var(--ink)}
+header.top nav a[aria-current="page"]{color:var(--ink);font-weight:600;background:var(--bg)}
+main{padding:36px 0 56px}
+h1{font-size:clamp(28px,5vw,38px);line-height:1.25;margin:0 0 6px}
+h2{font-size:21px;margin:34px 0 8px;scroll-margin-top:16px}
+p{margin:0 0 1em}
+ul{margin:0 0 1em;padding-inline-start:1.3em}
+li{margin-bottom:.4em}
+.updated{color:var(--ink-3);font-size:15px;margin-bottom:26px}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:20px 22px;margin:18px 0}
+.toc{display:flex;flex-wrap:wrap;gap:8px 16px;margin:0 0 8px;font-size:15px}
+footer{border-top:1px solid var(--rule);color:var(--ink-3);font-size:14px;padding:22px 0 40px}
+footer p{margin:0 0 .5em}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:10px 18px;border-radius:10px;text-decoration:none;font-weight:600;margin:4px 8px 4px 0}
+[dir="rtl"] .btn{margin:4px 0 4px 8px}
+/* two languages in one file: only the chosen one is shown */
+[data-ui="en"] [lang="ar"],[data-ui="ar"] [lang="en"]{display:none}
